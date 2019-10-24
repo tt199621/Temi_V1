@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:materialdesign="http://schemas.android.com/tools"
+    tools:context=".UI.activity.Schedule.SchedulingListActivity">
+
+    <cn.bingoogolapple.bgabanner.BGAGuideLinkageLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_default"
+            style="@style/BannerDefaultStyle"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:banner_aspectRatio="1.8"
+            app:banner_indicatorGravity="bottom|right"
+            app:banner_isNeedShowIndicatorOnOnlyOnePage="true"
+            app:banner_isNumberIndicator="true"
+            app:banner_numberIndicatorBackground="@drawable/shape_number_indicator_background"
+            app:banner_numberIndicatorTextColor="@android:color/white"
+            app:banner_numberIndicatorTextSize="25sp"
+            app:banner_pointAutoPlayAble="true"
+            app:banner_pointContainerBackground="@color/colorfirst_5"
+            app:banner_transitionEffect="defaultEffect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </cn.bingoogolapple.bgabanner.BGABanner>
+
+        <!--<cn.bingoogolapple.bgabanner.BGABanner-->
+            <!--android:id="@+id/banner_guide_foreground"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="300dp"-->
+            <!--app:banner_aspectRatio="1.8"-->
+            <!--app:banner_pageChangeDuration="1000"-->
+            <!--app:banner_pointAutoPlayAble="true"-->
+            <!--app:banner_pointAutoPlayInterval="5000"-->
+            <!--android:pointerIcon="none"-->
+            <!--app:banner_pointContainerBackground="@android:color/transparent"-->
+            <!--app:banner_pointTopBottomMargin="15dp"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
+    </cn.bingoogolapple.bgabanner.BGAGuideLinkageLayout>
+    <!--悬浮按钮-->
+    <com.gc.materialdesign.views.ButtonFloat
+        android:id="@+id/buttonFloat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/color_b7b8bd"
+        app:animate="true"
+        app:iconDrawable="@mipmap/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#f4ea2a"
+        materialdesign:animate="true" />
+</androidx.constraintlayout.widget.ConstraintLayout>

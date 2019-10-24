@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.temi_v1">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- 脸部识别权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".app.AppApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".UI.activity.AlarmActivity"
+            android:theme="@style/Translucents"/>
+        <activity android:name=".UI.activity.Booth.BoothDetailsActivity" />
+        <activity android:name=".UI.activity.Business.BusinessDestilsActivity" />
+        <activity android:name=".UI.activity.Exhibition.ExhibitionDestilsActivity" />
+        <activity android:name=".UI.activity.Business.BusinessActivity" />
+        <activity android:name=".UI.activity.Exhibition.ExhibitionActivity" />
+        <activity android:name=".UI.activity.Adjustable.AdjustableDestilsActivity" />
+        <activity android:name=".UI.activity.Adjustable.AdjustableActivity" />
+        <activity
+            android:name=".UI.activity.Schedule.ScheduleConfDetailActivity"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
+        <activity
+            android:name=".UI.activity.IntroductionActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
+        <activity android:name=".UI.activity.WelcomeguestsActivity" />
+        <activity
+            android:name=".UI.activity.ConfigureActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".UI.activity.WorkDetailsActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".UI.activity.ContactActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".UI.activity.WeatherActivity"
+            android:screenOrientation="landscape" /> <!-- &lt;!&ndash;<activity&ndash;&gt;人脸识别 -->
+        <!-- android:name=".UI.activity.faceArc.PreviewActivity" -->
+        <!-- android:launchMode="singleTop" /> -->
+        <activity
+            android:name=".UI.activity.ExhibitionModeActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".UI.activity.Schedule.SchedulingListActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".UI.activity.Schedule.SchedulingConfActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".UI.activity.WorkModelActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".UI.activity.Booth.BoothActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".UI.activity.MainActivity"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 展示图标 -->
+        <service android:name=".service.MyService" />
+
+        <meta-data
+            android:name="@string/metadata_skill"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="@string/metadata_actions"
+            android:value="sss.sss,sss.work,sss.main,go.tv,work,schedule,conference,booth,tour,activity,go.door,intro.company,activity1,age,restroom,high,name" />
+
+        <receiver
+            android:name=".service.MyReceiver"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".service.MyAlarmReceiver" /> <!-- <receiver android:name=".SnoozeReceiver"/> -->
+        <!-- <activity android:name=".activity.PlayAlarmActivity" -->
+        <!-- android:launchMode="singleTask"/> -->
+        <!-- <activity android:name=".activity.AboutActivity"/> -->
+        <service android:name=".service.AlarmService" />
+
+        <receiver android:name=".service.AlarmService$RebootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
